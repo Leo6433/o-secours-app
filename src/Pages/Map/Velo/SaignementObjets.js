@@ -1,7 +1,5 @@
 import React from 'react';
 import '../../style.css';
-import {Link} from 'react-router-dom';
-import { useCheckboxState, Checkbox } from "reakit/Checkbox";
 import BoutonRetour from '../../../Components/RetourMap';
 import echarpe from '../../../assets/Saignement/echarpe.png';
 import gant from '../../../assets/Saignement/gant.png';
@@ -9,10 +7,10 @@ import eau from '../../../assets/Saignement/gouttes-deau.png';
 import pansement from '../../../assets/Saignement/pansement.png';
 import sac from '../../../assets/Saignement/sac-plastique.png';
 import scie from '../../../assets/Saignement/scie-a-main.png';
-
+import Checkbox1 from '../../../Components/Checkbox';
 
 const SaignementObjet=() =>{
-    const checkbox = useCheckboxState({ state: [] });
+
     return(
         <div className='div-centrer'>
             <div className='text-margin'>
@@ -30,40 +28,8 @@ const SaignementObjet=() =>{
                     <img className='img-saignement' src={pansement} alt="pansement"/>
                     <img className='img-saignement' src={sac} alt="sac"/>
                     <img className='img-saignement' src={scie} alt="scie"/>
-
-                </div>   
-
-                <div style={{margin:10}}>
-                    <label>
-                        <Checkbox {...checkbox} value="echarpe" />
-                        Echarpe
-                    </label>
-                    <label>
-                        <Checkbox {...checkbox} value="eau" />
-                        Eau
-                    </label>
-                    <label>
-                        <Checkbox {...checkbox} value="gant" />
-                        Gant
-                    </label>
-                    <label>
-                        <Checkbox {...checkbox} value="pansement" />
-                        Pansement
-                    </label>
-                    <label>
-                        <Checkbox {...checkbox} value="sac" />
-                        Sac
-                    </label>
-                    <label>
-                        <Checkbox {...checkbox} value="scie" />
-                        Scie
-                    </label>            
                 </div> 
-
-                <div>Ton choix: {checkbox.state.join(", ")}</div>             
-            </div>
-            <div>
-                <button className='bouton-sauver'><Link style={{color:'white', textDecoration:'none' }} to="/ExplicationCompression">Valider les réponses</Link> </button>
+                <Checkbox1/>             
             </div>
             <BoutonRetour/>
         </div>      

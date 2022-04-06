@@ -7,10 +7,8 @@ import FormChiffre from '../../../Components/FormChiffre';
 import Radio1 from '../../../Components/Radio1';
 import Radio2 from '../../../Components/Radio2';
 
-
-
 const GestesEtouffement=()=>{
-    const scorePage=0;
+    //const scorePage=0;
 
     return(
     <div className='div-centrer'>
@@ -33,7 +31,7 @@ const GestesEtouffement=()=>{
         <FormChiffre/>
 
         <div>
-            <button className='bouton-sauver'><Link style={{color:'white', textDecoration:'none' }} to="/MapParc">Valider les réponses</Link> </button>
+            <button className='bouton-sauver'><Link style={{color:'white', textDecoration:'none' }} to="/ExplicationEtouffement">Valider les réponses</Link> </button>
         </div>
         <BoutonRetour/>     
     </div> 

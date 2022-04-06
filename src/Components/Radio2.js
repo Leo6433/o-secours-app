@@ -5,7 +5,7 @@ export default function Radio2() {
     function getValue() {
     var boutons = document.getElementsByName('coup');
     var valeur;
-        for(var i = 0; i < boutons.length; i++){
+    for(var i = 0; i < boutons.length; i++){
         if(boutons[i].checked){
             valeur = boutons[i].value;
         }

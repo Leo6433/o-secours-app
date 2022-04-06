@@ -21,7 +21,7 @@ export default function Radio2() {
         alert("Bonne réponse !")
     }
     else{
-        alert("Mauvaise réponse ! La réponse était libérer les voies aériennes")
+        alert("Mauvaise réponse ! La réponse était de libérer les voies aériennes")
     }
     }
 
