@@ -1,7 +1,9 @@
 import React from 'react';
 import './header.css';
 import logo from '../../assets/premiers-secours.png';
+import Coeur from '../../assets/coeur.png'
 import {Link} from 'react-router-dom';
+import Vie from '../Vie';
 
 const Header=()=>{
     return(
@@ -11,12 +13,15 @@ const Header=()=>{
                     <Link to="/"><img className='div-logo'src={logo}
                         alt="Premiers secours"/>
                     </Link>
+                    <img className='image-coeur'src={Coeur}
+                        alt="Coeur vie" />
+                       <Vie/>
                 </div>
                 <div style={{fontSize:30, fontFamily: "serif"}}>
                     <text>O'secours</text>
                 </div>
                 <div>
-                    <button className='div-bouton-bleu'>Règle du jeu</button>
+                    <button className='div-bouton-bleu'><Link style={{color:'white', textDecoration:'none'}} to="/RegleJeu">Règle du jeu</Link></button>
                     <button className='div-bouton-vert'>Aide</button>
                 </div>
             </div>

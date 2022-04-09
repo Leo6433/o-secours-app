@@ -3,13 +3,15 @@ import '../style.css';
 import ImageParc from '../../assets/MapParc_etoiles.png';
 import {Link} from 'react-router-dom';
 
+
 const MapParc =() => {
+
     return (
         <div className='div-centrer'>
             <div className='text-margin'>
                 <text style={{color:'red'}}> Des personnages sont en danger!</text>
                 <br/><br/>
-                <text> Clique sur une des situations ★ pour les sauver!</text>
+                <text> Clique sur une des situations ★ pour les sauver!</text>           
             </div>
             <div>
             <img className='img-MapParc'
@@ -38,6 +40,6 @@ const MapParc =() => {
 
         </div>
  
-    )
-}
+    );
+};
 export default MapParc;

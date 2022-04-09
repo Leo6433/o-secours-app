@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Coeur from '../assets/le-coeur-bat.png';
+import {globalStateContext} from '../App';
+import {dispatchStateContext} from '../App';
+
+    
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+    ];
 
 const Timer = () => {
   const [seconds, setSeconds] = useState(20);
@@ -7,6 +15,8 @@ const Timer = () => {
   const [visible, setVisible] = useState(true);
   const [counter, setCounter] = useState(0);
   const [erreur, setErreur]=useState(0);
+
+  const [state, dispatch] = useGlobalState();
     
     // Fonction qui incrémente à chaque clic et affiche les résultats
   function handleClick1 () {
@@ -43,6 +53,9 @@ const Timer = () => {
       MontreChrono(); 
       setIsActive(false);
       setErreur(Math.abs(40-counter))
+
+      if (erreur<=3)
+      {dispatch({ massage: state.massage + 1 })}
     }
     return () => clearInterval(interval);
   }, [isActive, seconds]);
@@ -61,8 +74,7 @@ const Timer = () => {
         {visible && <div>{seconds}s</div>}  
       </div>
       <div>
-        {seconds===0 && <div><p> Le temps est écoulé! </p>Vous avez fait {counter} compressions en 20s.</div>}
-        
+        {seconds===0 && <div><p> Le temps est écoulé! </p>Vous avez fait {counter} compressions en 20s.</div> }
       </div>
       <div>
         <img className='img-moyenne'
@@ -79,8 +91,8 @@ const Timer = () => {
           Voir le chrono
       </button>
       <div>
-        {seconds===0 && erreur<=3 && <div style={{color:'green'}}> Niveau validé!</div>}
-        {seconds===0 && erreur>=3 && <div style={{color:'green'}}> Niveau pas validé! Vous pouvez recommencer!</div>}
+        {seconds===0 && erreur<=3 && <div style={{color:'green'}}> Exercice validé!</div> }
+        {seconds===0 && erreur>=3 && <div style={{color:'green'}}> Exercice pas validé! Vous pouvez recommencer!</div>}
       </div>
       </div>
   );

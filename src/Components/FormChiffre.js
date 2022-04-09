@@ -1,8 +1,16 @@
 import React, {useState} from 'react';
+import {globalStateContext} from '../App';
+import {dispatchStateContext} from '../App';
+  
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+    ];
 
 export default function FormChiffre() {
     const [score, setScore]=useState(0);
     const [erreur, setErreur]=useState(0);
+    const [state, dispatch] = useGlobalState();
 
     function getValue() {
         // Sélectionner l'élément input et récupérer sa valeur
@@ -11,6 +19,8 @@ export default function FormChiffre() {
         if (value==='3'){
             setScore(score => score + 1 );
             alert ('Bonne réponse!')
+            dispatch({ etouffement: state.etouffement + 1 })  
+
         }
         else{
             alert('Ce n est pas la bonne réponse! Tu peux réessayer!')

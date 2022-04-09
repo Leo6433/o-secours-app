@@ -15,7 +15,7 @@ const Accueil =() => {
                 </text>
             </div>
             <div className='div-centrer'>
-                <button className='bouton-jouer'><Link style={{color:'black', textDecoration:'none'}} to="/ChoixSituation">Jouer</Link> </button>
+                <button className='bouton-jouer'><Link style={{color:'white', textDecoration:'none'}} to="/ChoixSituation">Jouer</Link> </button>
             </div>
         </div>
     )

@@ -1,6 +1,15 @@
 import React from 'react';
+import {globalStateContext} from '../App';
+import {dispatchStateContext} from '../App';
+  
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+    ];
+    
 
 export default function Radio() {
+    const [state, dispatch] = useGlobalState();
 
     function getValue() {
         // Sélectionner l'élément input et récupérer sa valeur
@@ -10,10 +19,10 @@ export default function Radio() {
         if (document.getElementById('position-b').checked) {
             valeur = document.getElementById('position-b').value;
            }
-        // Afficher la valeur
-        alert("Votre réponse : " + valeur);
+
         if (valeur==='Derrière'){
             alert("Bonne réponse !")
+            dispatch({ etouffement: state.etouffement + 1 })  
         }
         else{
             alert("Mauvaise réponse ! La réponse était de se placer derrière la victime !")

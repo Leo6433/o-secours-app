@@ -5,25 +5,35 @@ import {
     DisclosureContent,
   } from "reakit/Disclosure";
 import {Link} from 'react-router-dom';
+import {globalStateContext} from '../App';
+import {dispatchStateContext} from '../App';
+
+    
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+    ];
 
 export default function Radio2() {
     const disclosure = useDisclosureState({ visible: false });
-
+    const [state, dispatch] = useGlobalState();
+    
     function getValue() {
-    var boutons = document.getElementsByName('chute');
-    var valeur;
+        var boutons = document.getElementsByName('chute');
+        var valeur;
         for(var i = 0; i < boutons.length; i++){
         if(boutons[i].checked){
-            valeur = boutons[i].value;
+                valeur = boutons[i].value;
+            }
         }
-    }
-    if (valeur==='voies'){
-        alert("Bonne réponse !")
-    }
-    else{
-        alert("Mauvaise réponse ! La réponse était de libérer les voies aériennes")
-    }
-    }
+        if (valeur==='voies'){
+            alert("Bonne réponse !")
+            dispatch({ num: state.num + 1 })   
+        }
+        else{
+            alert("Mauvaise réponse ! La réponse était de libérer les voies aériennes")
+        }
+        }
 
     return (
         <div>

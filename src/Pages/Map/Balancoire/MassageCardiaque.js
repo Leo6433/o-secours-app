@@ -9,11 +9,21 @@ import { Button } from "reakit/Button";
 import BoutonRetour from '../../../Components/RetourMap';
 import Timer from '../../../Components/Timer';
 import ImageSecours from '../../../assets/Reaction/premiers-secours.png';
+import {globalStateContext} from '../../../App';
+import {dispatchStateContext} from '../../../App';
+
+    
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+    ];
 
 function MassageCardiaque(){
     // pour boite de dialogue 'appeler'
     const dialog = useDialogState();
     const ref = React.useRef();
+
+  const [state, dispatch] = useGlobalState();
 
   React.useEffect(() => {
     if (dialog.visible) {
@@ -28,7 +38,8 @@ function MassageCardiaque(){
             </div>
             <div>
                 <p>Il faut faire 100 compressions par minute, soit environ 2 compressions par seconde.</p>
-                <p>Appuie sur le coeur pour faire une compression et faire respirer la victime pendant 30 secondes! </p>
+                <p>Appuie sur le coeur pour faire une compression et faire respirer la victime pendant 20 secondes! </p>
+                Score sur la page: {state.massage}
             </div>
             <div>     
                 <Timer/>

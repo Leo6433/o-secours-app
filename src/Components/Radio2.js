@@ -1,6 +1,14 @@
 import React from 'react';
+import {globalStateContext} from '../App';
+import {dispatchStateContext} from '../App';
+  
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+    ];
 
 export default function Radio2() {
+    const [state, dispatch] = useGlobalState();
 
     function getValue() {
     var boutons = document.getElementsByName('coup');
@@ -12,6 +20,7 @@ export default function Radio2() {
     }
     if (valeur==='4/5'){
         alert("Bonne réponse !")
+        dispatch({ etouffement: state.etouffement + 1 })  
     }
     else{
         alert("Mauvaise réponse ! La réponse était 4 à 5 coups")

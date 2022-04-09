@@ -6,14 +6,36 @@ import ImageTapeDos from '../../../assets/ChoixTapeDos.png';
 import FormChiffre from '../../../Components/FormChiffre';
 import Radio1 from '../../../Components/Radio1';
 import Radio2 from '../../../Components/Radio2';
+import {globalStateContext} from '../../../App';
+import {dispatchStateContext} from '../../../App';
+  
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+    ];
+
+   
 
 const GestesEtouffement=()=>{
-    //const scorePage=0;
+    const [state, dispatch] = useGlobalState();
+
+    function ValidationReponses() {
+        // Sélectionner l'élément input et récupérer sa valeur
+        if (state.etouffement>=2) {
+            dispatch({ num: state.num + 1 })  
+            alert("Niveau validé!")
+           }
+        else{
+            alert("Niveau pas validé!")
+        }
+    }
 
     return(
     <div className='div-centrer'>
         <div className='text-margin'>
             <h2> Etoufffement </h2>
+            <div>Vos réponses sur la page: <c>{state.etouffement}</c></div>
+            <br/>
             <text>
                 La victime ne peut ni parler, ni respirer, ni tousser. Il va falloir débloquer ses voies aériennes.
             </text>
@@ -31,7 +53,7 @@ const GestesEtouffement=()=>{
         <FormChiffre/>
 
         <div>
-            <button className='bouton-sauver'><Link style={{color:'white', textDecoration:'none' }} to="/ExplicationEtouffement">Valider les réponses</Link> </button>
+            <button className='bouton-sauver' onClick={ValidationReponses}><Link style={{color:'white', textDecoration:'none' }} to="/ExplicationEtouffement">Valider les réponses</Link> </button>
         </div>
         <BoutonRetour/>     
     </div> 

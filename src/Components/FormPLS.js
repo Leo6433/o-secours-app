@@ -5,17 +5,28 @@ import {
     Disclosure,
     DisclosureContent,
   } from "reakit/Disclosure";
+import {globalStateContext} from '../App';
+import {dispatchStateContext} from '../App';
+
+    
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+    ];
 
 export default function Form() {
     const disclosure = useDisclosureState({ visible: false });
     const [score, setScore]=useState(0);
 
+    const [state, dispatch] = useGlobalState();
+
     function getValue() {
         // Sélectionner l'élément input et récupérer sa valeur
         var value = document.getElementById("in").value;
-        // Afficher la valeur
+
         if (value==='AEDFBC'){
             setScore(score => score + 1 );
+            dispatch({ num: state.num + 1 })   
         }
         else{
             alert('Ce n est pas la bonne combinanison! Tu peux réessayer!')
@@ -30,8 +41,8 @@ export default function Form() {
                 id='in'
             /> 
             <div className='centrer'>
-                <Disclosure onClick={()=>{getValue()}} className='bouton-sauver'{...disclosure}>Valider la réponse</Disclosure>
                 {score===1 && <div>Bien joué!</div>}
+                <Disclosure onClick={()=>{getValue()}} className='bouton-sauver'{...disclosure}>Valider la réponse</Disclosure>
                 <DisclosureContent style={{margin:5}}{...disclosure}><Link style={{color:'black',textDecoration:'none' }} to="/ExplicationPLS"> Voir l'explication →</Link></DisclosureContent>              
             </div>
         </div>

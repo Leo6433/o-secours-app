@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
 import '../Pages/style.css';
 import {Link} from 'react-router-dom';
+import {globalStateContext} from '../App';
+import {dispatchStateContext} from '../App';
+import { useNavigate } from "react-router-dom";
+
+    
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+	];
+	
 
 export default function App() {
+	const [state, dispatch] = useGlobalState();
+	let navigate = useNavigate();
 	const questions = [
 		{
 			questionTexte: 'Le secouriste doit transmettre aux secours une description précise des caractéristiques, c est à dire',
@@ -54,11 +66,24 @@ export default function App() {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
+	const [nbessai, setEssai]=useState(1);
 
 	function reset() {
 		setCurrentQuestion(0);
 		setScore(0);
 		setShowScore(false);
+		setEssai(nbessai - 1);
+		if(nbessai===0)
+		{
+			navigate("/ExplicationBrulure");
+		}
+	}
+
+	function AugmenteVie(){
+		if (score>=3)
+		{
+			dispatch({ num: state.num + 1 })
+		}
 	}
 
 	const handlereponseOptionClick = (isCorrect) => {
@@ -71,15 +96,16 @@ export default function App() {
 		} else {
 			setShowScore(true);
 		}
+
 	};
 	return (
 		<div className='quizz'>
 			{showScore ? (
 				<div className='score-section'>
 					<p>Ton score est de {score} sur {questions.length}</p>
-                    {score>3 && <div style={{color:'green'}}> Niveau validé! <button className='bouton-sauver'><Link style={{color:'black',textDecoration:'none'}} to="/ExplicationBrulure">Voir l'explication</Link></button></div>}
+                    {score>3 && <div style={{color:'green'}}> Niveau validé! <button className='bouton-sauver' onClick={AugmenteVie}><Link style={{color:'white',textDecoration:'none'}} to="/ExplicationBrulure">Voir l'explication</Link></button></div>}
                     {score<=3 && <div style={{color:'green'}}> Niveau pas validé! Vous pouvez recommencer!<button className='bouton-sauver'onClick={() => reset()}>Recommencer</button></div>}
-                    
+                    <p>Nombre d'essai restant: {nbessai}</p>
 				</div>
 			) : (
 				<>
