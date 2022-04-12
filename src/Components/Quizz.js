@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import '../Pages/style.css';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {globalStateContext} from '../App';
 import {dispatchStateContext} from '../App';
-import { useNavigate } from "react-router-dom";
 
     
 const useGlobalState = () => [
@@ -103,8 +102,8 @@ export default function App() {
 			{showScore ? (
 				<div className='score-section'>
 					<p>Ton score est de {score} sur {questions.length}</p>
-                    {score>3 && <div style={{color:'green'}}> Niveau validé! <button className='bouton-sauver' onClick={AugmenteVie}><Link style={{color:'white',textDecoration:'none'}} to="/ExplicationBrulure">Voir l'explication</Link></button></div>}
-                    {score<=3 && <div style={{color:'green'}}> Niveau pas validé! Vous pouvez recommencer!<button className='bouton-sauver'onClick={() => reset()}>Recommencer</button></div>}
+                    {score>3 && <div style={{color:'green'}}> Niveau validé! <button className='validation' onClick={AugmenteVie}><Link style={{color:'black',textDecoration:'none'}} to="/ExplicationBrulure">Voir l'explication</Link></button></div>}
+                    {score<=3 && <div> <p>Niveau pas validé! Vous pouvez recommencer!</p><button className='validation'onClick={() => reset()}>Recommencer</button></div>}
                     <p>Nombre d'essai restant: {nbessai}</p>
 				</div>
 			) : (

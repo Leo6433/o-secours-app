@@ -1,12 +1,13 @@
 import React from 'react';
 import '../../../style.css';
 import EtapesPLS from '../../../../assets/Balancoire/EtapesPLS.jpeg'
-import BoutonRetour from '../../../../Components/RetourMap';
+import {Link} from 'react-router-dom';
+import IconeRetour from '../../../../assets/retour.png';
 
 function ExplicationPLS(){
     return(
         <div className='div-centrer'>
-        <h2>Etapes d'une PLS</h2>
+            <h2>Etapes d'une PLS</h2>
         <div style={{ margin:20}}>
             <img className='img-Situation'
                 src={EtapesPLS}
@@ -25,8 +26,13 @@ function ExplicationPLS(){
                 <p>et remontez le genou supérieur à angle droit pour terminer la stabilisation.</p>
                 <p><c>6</c> Restez à côté de la victime en attendant les secours.</p>
         </div>
-            <BoutonRetour/>
-        </div>
+        <div style={{textAlign:'left'}}>               
+            <button className='bouton-retour'>
+                <img style={{height:10}}src={IconeRetour} alt="<"/> 
+                    <Link style={{color:'black',textDecoration:'none'}} to="/ExplicationBalancoire">Retour</Link> 
+                </button>
+            </div> 
+        </div>      
        
     );
 };   

@@ -14,7 +14,7 @@ const Timer = () => {
   const [isActive, setIsActive] = useState(false);
   const [visible, setVisible] = useState(true);
   const [counter, setCounter] = useState(0);
-  const [erreur, setErreur]=useState(0);
+  const [erreur, setErreur]=useState(null);
 
   const [state, dispatch] = useGlobalState();
     
@@ -32,6 +32,7 @@ const Timer = () => {
     setCounter(0);
     setIsActive(false);
     setVisible(true);
+    setErreur(null);
   }
   // Arrete le temps et montre le chrono
   function MontreChrono()
@@ -52,11 +53,13 @@ const Timer = () => {
     {
       MontreChrono(); 
       setIsActive(false);
-      setErreur(Math.abs(40-counter))
-
-      if (erreur<=3)
-      {dispatch({ massage: state.massage + 1 })}
+      // Pour trouver la différence entre le bon score (40) et le score obtenu (counter)
+      setErreur(Math.abs(40-counter))  
+    if (erreur===3 || erreur===2 || erreur===1 || erreur===0)
+    {
+      dispatch({ massage: state.massage + 1 })
     }
+  }
     return () => clearInterval(interval);
   }, [isActive, seconds]);
 
@@ -91,8 +94,9 @@ const Timer = () => {
           Voir le chrono
       </button>
       <div>
+        Nombre d'erreur: {erreur}
         {seconds===0 && erreur<=3 && <div style={{color:'green'}}> Exercice validé!</div> }
-        {seconds===0 && erreur>=3 && <div style={{color:'green'}}> Exercice pas validé! Vous pouvez recommencer!</div>}
+        {seconds===0 && erreur>3 && <div style={{color:'green'}}> Exercice pas validé! Vous pouvez recommencer!</div>}
       </div>
       </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../../style.css';
 import {
   useDialogState,
@@ -22,14 +22,27 @@ function MassageCardiaque(){
     // pour boite de dialogue 'appeler'
     const dialog = useDialogState();
     const ref = React.useRef();
+    const [state, dispatch] = useGlobalState();
 
-  const [state, dispatch] = useGlobalState();
-
-  React.useEffect(() => {
+  useEffect(() => {
     if (dialog.visible) {
       ref.current.focus();
     }
+    if (state.massage>=2) {
+        dispatch({ num: state.num + 1 })  
+        alert("Niveau validé! Vous avez gagné une vie!")
+       }
   }, [dialog.visible]);
+
+  function MauvaiseReponse(){
+    alert("Les bonnes réponses étaient 15 ou 112");
+    dialog.hide();
+  }
+  function BonneReponse(){
+    alert("Bien joué ! Les bonnes réponses étaient 15 ou 112");
+    dialog.hide();
+    dispatch({ massage: state.massage + 1 })  
+  }
 
     return(
         <div className='div-centrer'>
@@ -55,30 +68,11 @@ function MassageCardiaque(){
                     <p style={{textAlign:"center"}}>Qui voulez vous appeler?</p>
                     <div className="boite-dialogue" style={{margin:15, textAlign: "center", backgroundColor: "rgb(70, 195,181)", padding:10}}>
                     <Button className='bouton-blanc' onClick={dialog.hide}>Annuler</Button>
-                    <Button  className='bouton-blanc' ref={ref} onClick={() => {
-                        alert("Les bonnes réponses étaient 15 ou 112");
-                        dialog.hide();
-                        }}>18</Button>
-                    <Button className='bouton-blanc'
-                        onClick={() => {
-                        alert("Les bonnes réponses étaient 15 ou 112");
-                        dialog.hide();
-                        }}>17</Button>
-                    <Button className='bouton-blanc'
-                        onClick={() => {
-                        alert("Bien joué ! Les bonnes réponses étaient 15 ou 112");
-                        dialog.hide();
-                        }}>15</Button>
-                    <Button className='bouton-blanc'
-                        onClick={() => {
-                        alert("Bien joué ! Les bonnes réponses étaient 15 ou 112");
-                        dialog.hide();
-                        }}>112</Button>
-                    <Button className='bouton-blanc'
-                        onClick={() => {
-                        alert("Les bonnes réponses étaient 15 ou 112");
-                        dialog.hide();
-                        }}>114</Button>
+                    <Button  className='bouton-blanc' ref={ref} onClick={()=>{MauvaiseReponse()}}>18</Button>
+                    <Button className='bouton-blanc' onClick={()=>{MauvaiseReponse()}}>17</Button>
+                    <Button className='bouton-blanc' onClick={()=>{BonneReponse()}}>15</Button>
+                    <Button className='bouton-blanc' onClick={()=>{BonneReponse()}}>112</Button>
+                    <Button className='bouton-blanc'onClick={()=>{MauvaiseReponse()}}>114</Button>
                     </div>
                 </Dialog>
                 </div>

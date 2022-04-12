@@ -1,24 +1,40 @@
 import React from "react";
+import {globalStateContext} from '../App';
+import {dispatchStateContext} from '../App';
+
+    
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+    ];
 
 export default function Checkbox() { 
+
+  const [state, dispatch] = useGlobalState();
   
   function getValue() {
     var boutons = document.getElementsByName('saignement');
     var valeur;
     for(var i = 0; i< boutons.length; i++){
         if(boutons[i].checked){
-            valeur = boutons[i].value;
+            valeur = boutons[i].value; 
         }
     }
     alert("Votre réponse : "+ valeur);
 
-    if (valeur==='echarpe' || valeur==='eau' || valeur==='scie' || valeur==='pansement'){
+
+    if(valeur==='gant' || valeur==='echarpe' || valeur==='sac')
+    {
+      alert("Bonne réponse!")
+      dispatch({ num: state.num + 1 })
+    }
+
+    else if (valeur==='echarpe' || valeur==='eau' || valeur==='scie' || valeur==='pansement')
+    {
       alert("Mauvaise réponse!")
     }
-    else{
-      alert("Bonne réponse!")
-    }
-    }
+  }
+
   
     return (
         <div>   

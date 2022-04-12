@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {globalStateContext} from '../App';
 import {dispatchStateContext} from '../App';
+
   
 const useGlobalState = () => [
         React.useContext(globalStateContext),
@@ -23,7 +24,7 @@ export default function FormChiffre() {
 
         }
         else{
-            alert('Ce n est pas la bonne réponse! Tu peux réessayer!')
+            alert('Ce n est pas la bonne réponse!')
             setErreur(erreur => erreur + 1 );
         }
     }

@@ -2,9 +2,24 @@ import React from 'react';
 import '../style.css';
 import ImageParc from '../../assets/MapParc_etoiles.png';
 import {Link} from 'react-router-dom';
+import {globalStateContext} from '../../App';
+import {dispatchStateContext} from '../../App';
+
+    
+const useGlobalState = () => [
+        React.useContext(globalStateContext),
+        React.useContext(dispatchStateContext)
+    ];
 
 
 const MapParc =() => {
+    const [state, dispatch] = useGlobalState();
+
+    function reset(){
+        dispatch({ num: 0 })   
+        dispatch({ etouffement: 0 })   
+        dispatch({ massage: 0 })   
+    }
 
     return (
         <div className='div-centrer'>
@@ -13,6 +28,7 @@ const MapParc =() => {
                 <br/><br/>
                 <text> Clique sur une des situations ★ pour les sauver!</text>           
             </div>
+            {state.num===3 && <div className="rectangle-beige"><p>Bien joué vous avez sauvez 3 vies! </p><button className="bouton-sauver" onClick={()=>{reset()}}>Recommencer</button></div>}
             <div>
             <img className='img-MapParc'
                 src={ImageParc}
@@ -36,6 +52,9 @@ const MapParc =() => {
                 </Link>
                 
             </map>
+
+
+
             </div>
 
         </div>
