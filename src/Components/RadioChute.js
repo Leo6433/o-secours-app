@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     useDisclosureState,
     Disclosure,
     DisclosureContent,
   } from "reakit/Disclosure";
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {globalStateContext} from '../App';
 import {dispatchStateContext} from '../App';
 
@@ -18,6 +18,9 @@ const useGlobalState = () => [
 // Fonction qui permet de selectionner quel est la premiere chose à faire en cas de perte de conscience
 export default function Radio2() {
     const disclosure = useDisclosureState({ visible: false });
+    const [essai, setEssai]=useState(0);
+    let navigate = useNavigate();
+    
     const [state, dispatch] = useGlobalState();
     
     function getValue() {
@@ -30,13 +33,20 @@ export default function Radio2() {
             }
         }
          // Bonne réponse
-        if (valeur==='voies'){
-            alert("Bonne réponse !")
-            dispatch({ vie: state.vie + 1 })   
+        if (valeur==='voies' && essai===0){
+            dispatch({ vie: state.vie + 1 }) 
+            // Met le nombre d'essais à -1 si c'est le 1er coup et affiche par la suite 'bien joué'
+            setEssai(essai => essai -1 ); 
         }
-         // Mauvaise réponse 
-        else{
+         // Bonne réponse mais le nombre d'essais est supérieur à 1
+        else if(valeur==='voies' && essai>0)
+        {
+            navigate("/ExplicationBalancoire");
+        }
+        else
+        {
             alert("Mauvaise réponse ! La réponse était de libérer les voies aériennes")
+            setEssai(essai => essai + 1 ); 
         }
         }
 
@@ -57,6 +67,7 @@ export default function Radio2() {
             </div>
             <div className='centrer'>
             <Disclosure onClick={()=>{getValue()}} className='bouton-sauver'{...disclosure}>Valider la réponse</Disclosure>
+            { essai===-1 && <div>Bien joué!</div>}
             <DisclosureContent style={{margin:5}}{...disclosure}><Link style={{color:'black',textDecoration:'none' }} to="/ExplicationBalancoire"> Voir l'explication →</Link></DisclosureContent>              
         </div>
         </div>
