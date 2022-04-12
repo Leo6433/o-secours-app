@@ -2,32 +2,39 @@ import React from 'react';
 import {globalStateContext} from '../App';
 import {dispatchStateContext} from '../App';
   
+// Composant Radio 2 appelé dans GesteEtouffement
+
 const useGlobalState = () => [
         React.useContext(globalStateContext),
         React.useContext(dispatchStateContext)
     ];
 
+  // Fonction qui permet à l'utilisateur de choisir le nombre de tappe à effectuer sur une personne qui s'etouffe
 export default function Radio2() {
     const [state, dispatch] = useGlobalState();
 
     function getValue() {
     var boutons = document.getElementsByName('coup');
     var valeur;
+    // Récupère la valeur de l'element selectionné
     for(var i = 0; i < boutons.length; i++){
         if(boutons[i].checked){
             valeur = boutons[i].value;
         }
     }
+     // Bonne réponse
     if (valeur==='4/5'){
         alert("Bonne réponse !")
         dispatch({ etouffement: state.etouffement + 1 })  
     }
+     // Mauvaise réponse 
     else{
         alert("Mauvaise réponse ! La réponse était 4 à 5 coups")
     }
     }
 
     return (
+        //Utilisation de input et label pour créer des boutons de type radio
         <div>
             <p> Nombre de coups à frapper par series : </p> 
             <div className='rectangle-beige'>

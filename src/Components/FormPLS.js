@@ -8,6 +8,7 @@ import {
 import {globalStateContext} from '../App';
 import {dispatchStateContext} from '../App';
 
+// Composant FormPLS appelé dans PLS
     
 const useGlobalState = () => [
         React.useContext(globalStateContext),
@@ -25,19 +26,20 @@ export default function Form() {
         // Sélectionner l'élément input et récupérer sa valeur
         var value = document.getElementById("in").value;
 
-        // Réussi le niveau avec moins de 2 essais
+        // Réussite du niveau avec moins de 2 essais
         if (value==='AEDFBC'&& essai<2){
-            dispatch({ num: state.num + 1 })  
+            dispatch({ vie: state.vie + 1 })  
             setEssai(essai => essai - 1 ); 
             navigate("/ExplicationPLS");
         }
 
-        // Réussi mais avec trop essais
+        // Réussite mais avec trop essais
         else if(value==='AEDFBC'&& essai>=2){
             alert('Bonne réponse mais vous avez trop d essais!')
             setEssai(essai => essai + 1 );
             navigate("/ExplicationPLS");
         }
+        // Echec du niveau
         else{
             alert('Ce n est pas la bonne combinanison!')
             setEssai(essai => essai + 1 );
@@ -45,13 +47,14 @@ export default function Form() {
     }
 
     return (
+         /* Affiche un champ de saisie
+        Le joueur a le droit à 2 essais maximum sinon son exercice n'est pas validé*/
         <div>
             <input style={{width:180}}
                 type='text'
                 placeholder="Votre réponse (en majuscule)" 
                 id='in'
             /> 
-            
             <div className='centrer'>
                 {essai===-1 && <div>Bien joué!</div>}
                 {essai>0 && <div>Nombre d'essais restants: {2-essai} </div>}

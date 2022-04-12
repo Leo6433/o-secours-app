@@ -29,7 +29,7 @@ function MassageCardiaque(){
       ref.current.focus();
     }
     if (state.massage>=2) {
-        dispatch({ num: state.num + 1 })  
+        dispatch({ vie: state.vie + 1 })  
         alert("Niveau validé! Vous avez gagné une vie!")
        }
   }, [dialog.visible]);

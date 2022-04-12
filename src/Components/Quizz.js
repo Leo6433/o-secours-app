@@ -14,6 +14,8 @@ const useGlobalState = () => [
 export default function App() {
 	const [state, dispatch] = useGlobalState();
 	let navigate = useNavigate();
+
+	// Definition des questions, des propositions de reponse ainsi que des réponses correctes 
 	const questions = [
 		{
 			questionTexte: 'Le secouriste doit transmettre aux secours une description précise des caractéristiques, c est à dire',
@@ -67,6 +69,7 @@ export default function App() {
 	const [score, setScore] = useState(0);
 	const [nbessai, setEssai]=useState(1);
 
+	// Fonction qui reinitialise le quizz si le joueur decide de recommencer
 	function reset() {
 		setCurrentQuestion(0);
 		setScore(0);
@@ -78,10 +81,11 @@ export default function App() {
 		}
 	}
 
+	// Fonction qui fait augmenter le nombre de vie sauvée
 	function AugmenteVie(){
 		if (score>=3)
 		{
-			dispatch({ num: state.num + 1 })
+			dispatch({ vie: state.vie + 1 })
 		}
 	}
 

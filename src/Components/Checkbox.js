@@ -8,10 +8,13 @@ const useGlobalState = () => [
         React.useContext(dispatchStateContext)
     ];
 
+// Checkbox où le joueur choisit un objet pour arreter le saignement
+
 export default function Checkbox() { 
 
   const [state, dispatch] = useGlobalState();
   
+  // Permet de recuperer la valeur de l'element selectionné
   function getValue() {
     var boutons = document.getElementsByName('saignement');
     var valeur;
@@ -22,11 +25,10 @@ export default function Checkbox() {
     }
     alert("Votre réponse : "+ valeur);
 
-
     if(valeur==='gant' || valeur==='echarpe' || valeur==='sac')
     {
       alert("Bonne réponse!")
-      dispatch({ num: state.num + 1 })
+      dispatch({ vie: state.vie + 1 })
     }
 
     else if (valeur==='echarpe' || valeur==='eau' || valeur==='scie' || valeur==='pansement')
@@ -34,8 +36,6 @@ export default function Checkbox() {
       alert("Mauvaise réponse!")
     }
   }
-
-  
     return (
         <div>   
             <div>

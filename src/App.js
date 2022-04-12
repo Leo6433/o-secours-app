@@ -21,9 +21,10 @@ import Brulure from './Pages/Map/BatimentFeu/Brulure';
 import ExplicationBrulure from './Pages/Map/BatimentFeu/ExplicationBrulure';
 import ExplicationEtouffement from './Pages/Map/Glacier/ExplicationEtouffement';
 import ExplicationPLS from './Pages/Map/Balancoire/PLS/ExplicationPLS';
+import NotFoundPage from './Pages/404Page/NotFoundPage';
 
 const defaultGlobalState = {
-  num:0,
+  vie:0,
   etouffement:0,
   massage:0,
 };
@@ -73,6 +74,7 @@ const App = () => {
           <Route path="/ExplicationBrulure" element={<ExplicationBrulure/>}></Route>
           <Route path="/ExplicationEtouffement" element={<ExplicationEtouffement/>}></Route>
           <Route path="/ExplicationPLS" element={<ExplicationPLS/>}></Route>
+          <Route path="*" element={<NotFoundPage/>}> </Route>
         </Routes>
       </main>        
       </Router>

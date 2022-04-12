@@ -8,12 +8,14 @@ import {Link} from 'react-router-dom';
 import {globalStateContext} from '../App';
 import {dispatchStateContext} from '../App';
 
-    
+// Composant RadioChute appelé dans GesteChute (Balancoire)
+
 const useGlobalState = () => [
         React.useContext(globalStateContext),
         React.useContext(dispatchStateContext)
     ];
 
+// Fonction qui permet de selectionner quel est la premiere chose à faire en cas de perte de conscience
 export default function Radio2() {
     const disclosure = useDisclosureState({ visible: false });
     const [state, dispatch] = useGlobalState();
@@ -21,21 +23,25 @@ export default function Radio2() {
     function getValue() {
         var boutons = document.getElementsByName('chute');
         var valeur;
+        // Récupère la valeur de l'element selectionné
         for(var i = 0; i < boutons.length; i++){
         if(boutons[i].checked){
                 valeur = boutons[i].value;
             }
         }
+         // Bonne réponse
         if (valeur==='voies'){
             alert("Bonne réponse !")
-            dispatch({ num: state.num + 1 })   
+            dispatch({ vie: state.vie + 1 })   
         }
+         // Mauvaise réponse 
         else{
             alert("Mauvaise réponse ! La réponse était de libérer les voies aériennes")
         }
         }
 
     return (
+        //Utilisation de input et label pour créer des boutons de type radio
         <div>
             <div>
             <input type="radio" name="chute" id="chute1" value="respiration" checked></input>

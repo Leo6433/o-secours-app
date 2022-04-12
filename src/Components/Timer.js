@@ -3,12 +3,14 @@ import Coeur from '../assets/le-coeur-bat.png';
 import {globalStateContext} from '../App';
 import {dispatchStateContext} from '../App';
 
+// Composant Timer appelé dans MassageCardiaque(Balancoire)
     
 const useGlobalState = () => [
         React.useContext(globalStateContext),
         React.useContext(dispatchStateContext)
     ];
 
+// Fonction qui simule un massage cardiaque sur une durée de 20s
 const Timer = () => {
   const [seconds, setSeconds] = useState(20);
   const [isActive, setIsActive] = useState(false);
@@ -18,7 +20,7 @@ const Timer = () => {
 
   const [state, dispatch] = useGlobalState();
     
-    // Fonction qui incrémente à chaque clic et affiche les résultats
+  // Fonction qui incrémente un compteur à chaque clic et affiche les résultats
   function handleClick1 () {
       setCounter(counter + 1)
   } 
@@ -26,7 +28,7 @@ const Timer = () => {
     setIsActive(!isActive);
     setVisible(false);
   }
-// Remettre le timer et compteur à 0
+  // Remettre le timer, compteur et nombre d'erreur à 0
   function reset() {
     setSeconds(20);
     setCounter(0);
@@ -83,7 +85,9 @@ const Timer = () => {
         <img className='img-moyenne'
             src={Coeur}
             alt="Coeur"
-            onClick={handleClick1}/> 
+            onClick={handleClick1}
+            //Coeur cliquable
+            /> 
       </div>
       <div className='compteur'>
         {counter}

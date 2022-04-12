@@ -14,7 +14,6 @@ const useGlobalState = () => [
         React.useContext(dispatchStateContext)
     ];
 
-   
 
 const GestesEtouffement=()=>{
     const [state, dispatch] = useGlobalState();
@@ -22,7 +21,7 @@ const GestesEtouffement=()=>{
     function ValidationReponses() {
         // Sélectionner l'élément input et récupérer sa valeur
         if (state.etouffement>=2) {
-            dispatch({ num: state.num + 1 })  
+            dispatch({ vie: state.vie + 1 })  
             alert("Niveau validé!")
            }
         else{

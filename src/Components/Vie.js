@@ -8,10 +8,11 @@ export const useGlobalState = () => [
         React.useContext(dispatchStateContext)
     ];
 
+// Affiche le nombre de vie en haut à gauche de l'écran
 const NbVie = () => {
     const [state] = useGlobalState();
     return (
-        <div> {state.num} </div>
+        <div> {state.vie} </div>
     );
 };
 export default NbVie;
