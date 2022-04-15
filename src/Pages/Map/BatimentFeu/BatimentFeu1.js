@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../style.css';
 import {Link} from 'react-router-dom';
-import ImageFeu from '../../../assets/immeubleFeu.png';
-import ImageBrulure from '../../../assets/GarconBrulure.png';
+import ImageFeu from '../../../Image/immeubleFeu.png';
+import ImageBrulure from '../../../Image/GarconBrulure.png';
 import BoutonRetour from '../../../Components/RetourMap';
 
 const SituationFeu=() =>{

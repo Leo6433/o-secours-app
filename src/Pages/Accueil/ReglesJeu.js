@@ -2,6 +2,9 @@ import React from 'react';
 import '../style.css';
 import {Link} from 'react-router-dom';
 
+// Page qui explique les règles du jeu
+// Accesible par toutes les pages puisque le bouton 'règle du jeu' est placé dans le header
+
 const Regle =() => {
     return(
         <div>

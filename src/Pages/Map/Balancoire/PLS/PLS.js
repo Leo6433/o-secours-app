@@ -1,8 +1,10 @@
 import React from 'react';
 import '../../../style.css';
-import ImageEtapesPLS from '../../../../assets/Balancoire/PLS.png'
+import ImageEtapesPLS from '../../../../Image/Balancoire/PLS.png'
 import Form from '../../../../Components/FormPLS';
 import BoutonRetour from '../../../../Components/RetourMap';
+
+// Exercice où il faut remettre les étapes d'une PLS dans l'ordre (saisie de la réponse avec <Form/>)
 
 function PLS(){
     return(

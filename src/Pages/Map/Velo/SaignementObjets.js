@@ -1,12 +1,12 @@
 import React from 'react';
 import '../../style.css';
 import BoutonRetour from '../../../Components/RetourMap';
-import echarpe from '../../../assets/Saignement/echarpe.png';
-import gant from '../../../assets/Saignement/gant.png';
-import eau from '../../../assets/Saignement/gouttes-deau.png';
-import pansement from '../../../assets/Saignement/pansement.png';
-import sac from '../../../assets/Saignement/sac-plastique.png';
-import scie from '../../../assets/Saignement/scie-a-main.png';
+import echarpe from '../../../Image/Saignement/echarpe.png';
+import gant from '../../../Image/Saignement/gant.png';
+import eau from '../../../Image/Saignement/gouttes-deau.png';
+import pansement from '../../../Image/Saignement/pansement.png';
+import sac from '../../../Image/Saignement/sac-plastique.png';
+import scie from '../../../Image/Saignement/scie-a-main.png';
 import Checkbox1 from '../../../Components/Checkbox';
 
 const SaignementObjet=() =>{

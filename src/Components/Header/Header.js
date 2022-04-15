@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.css';
-import logo from '../../assets/premiers-secours.png';
-import Coeur from '../../assets/coeur.png'
+import logo from '../../Image/premiers-secours.png';
+import Coeur from '../../Image/coeur.png'
 import {Link} from 'react-router-dom';
 import Vie from '../Vie';
 

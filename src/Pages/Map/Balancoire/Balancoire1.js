@@ -1,8 +1,10 @@
 import React from 'react';
 import '../../style.css';
 import {Link} from 'react-router-dom';
-import ImageChuteBalancoire from '../../../assets/chute.png';
+import ImageChuteBalancoire from '../../../Image/chute.png';
 import BoutonRetour from '../../../Components/RetourMap';
+
+// Explication de la situation lorsque l'on clique sur la balancoire. Il s'agit d'une perte de connaissance
 
 const SituationBalancoire=() =>{
     return(

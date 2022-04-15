@@ -1,8 +1,11 @@
 import React from 'react';
 import '../style.css';
-import ImageEcole from '../../assets/ChoixSituation/Ecole.jpeg';
-import ImageParc from '../../assets/ChoixSituation/Parc.jpeg';
+import ImageEcole from '../../Image/ChoixSituation/Ecole.jpeg';
+import ImageParc from '../../Image/ChoixSituation/Parc.jpeg';
 import {Link} from 'react-router-dom';
+
+// Page qui permet au joueur de choisir une situation
+// Seulement la page Parc existe mais c'était pour montrer que le jeu fonctionne avec différentes situations à choisir.
 
 const ChoixSituation =() => {
     return(

@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../style.css';
-import echarpe from '../../../assets/Saignement/echarpe.png';
-import gant from '../../../assets/Saignement/gant.png';
-import sac from '../../../assets/Saignement/sac-plastique.png';
+import echarpe from '../../../Image/Saignement/echarpe.png';
+import gant from '../../../Image/Saignement/gant.png';
+import sac from '../../../Image/Saignement/sac-plastique.png';
 import BoutonRetour from '../../../Components/RetourMap';
 
 

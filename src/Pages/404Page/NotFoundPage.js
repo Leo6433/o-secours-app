@@ -3,6 +3,7 @@ import '../style.css';
 import { Link } from 'react-router-dom';
 
 // Page qui s'affiche si la page n'existe pas 
+// Redirection vers la page d'accueil
 
 class NotFoundPage extends React.Component{
     render(){

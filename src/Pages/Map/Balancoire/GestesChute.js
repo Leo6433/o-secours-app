@@ -2,11 +2,13 @@ import React from 'react';
 import '../../style.css';
 import RadioChute from '../../../Components/RadioChute';
 import BoutonRetour from '../../../Components/RetourMap';
-import parle from '../../../assets/Reaction/parlant.png';
-import reveil from '../../../assets/Reaction/reveil.png';
-import respiration from '../../../assets/Reaction/respiration.png';
-import premierSecours from '../../../assets/Reaction/premiers-secours.png';
-import difficulte from '../../../assets/Reaction/difficulteRespirer.png';
+import parle from '../../../Image/Reaction/parlant.png';
+import reveil from '../../../Image/Reaction/reveil.png';
+import respiration from '../../../Image/Reaction/respiration.png';
+import premierSecours from '../../../Image/Reaction/premiers-secours.png';
+import difficulte from '../../../Image/Reaction/difficulteRespirer.png';
+
+// Bouton radio pour choisir quelle est la première chose à faire avec une personne inconsciente
 
 const GesteChute=()=>{
 

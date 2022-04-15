@@ -8,7 +8,7 @@ import {
 import { Button } from "reakit/Button";
 import BoutonRetour from '../../../Components/RetourMap';
 import Timer from '../../../Components/Timer';
-import ImageSecours from '../../../assets/Reaction/premiers-secours.png';
+import ImageSecours from '../../../Image/Reaction/premiers-secours.png';
 import {globalStateContext} from '../../../App';
 import {dispatchStateContext} from '../../../App';
 

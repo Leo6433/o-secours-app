@@ -2,6 +2,8 @@ import React from 'react';
 import '../style.css';
 import {Link} from 'react-router-dom';
 
+// Page de présentation qui expose l'objectif de l'application web 
+
 const Accueil =() => {
     return(
         <div>

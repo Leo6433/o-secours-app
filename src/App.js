@@ -23,12 +23,19 @@ import ExplicationEtouffement from './Pages/Map/Glacier/ExplicationEtouffement';
 import ExplicationPLS from './Pages/Map/Balancoire/PLS/ExplicationPLS';
 import NotFoundPage from './Pages/404Page/NotFoundPage';
 
+/* Création de trois variables globales
+ - vie: correspond au nombre de niveau validé ou au nombre de vies sauvées
+ - etouffement: sur la page GesteEtouffement, compte le nombre de bonnes réponses sur cette page (si ce nombre est supérieur à 2, le nombre de vie augmente de 1)
+ - massage: sur la page Massage, compte le nombre de bonnes réponses sur cette page (si ce nombre est égal 2, le nombre de vie augmente de 1)*/
+
 const defaultGlobalState = {
   vie:0,
   etouffement:0,
   massage:0,
 };
 
+// Création des variables globales (utilisables dans toutes les pages de l'application)
+// Dispatch permet de modifier la valeur de ces variables
 export const globalStateContext = React.createContext(defaultGlobalState);
 export const dispatchStateContext = React.createContext(undefined);
 
@@ -50,7 +57,6 @@ const App = () => {
 // Définition des routes utilisées pour naviguer entre les pages via Link
   return(
   <GlobalStateProvider>
-    
       <Router>       
       <main>
         <Header/>

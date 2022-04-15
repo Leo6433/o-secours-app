@@ -3,10 +3,13 @@ import '../../style.css';
 import {Link} from 'react-router-dom';
 import BoutonRetour from '../../../Components/RetourMap';
 
+// Correction et explication sur le premier geste à faire avec une personne inconsciente
+// 2 boutons qui permettent de choisir entre 2 nouvelles situations
+
 const ExplicationBalancoire=() =>{
     return(
         <div className='div-centrer'>
-            <h2>Etape à suivre avec une personne inconsciente</h2>
+            <h2>Etapes à suivre avec une personne inconsciente</h2>
             <div className='text-margin fond-beige'>
                 <p> <c> 1</c> Il faut vérifier sa respiration. </p>
                 <br/>

@@ -2,7 +2,7 @@ import React from 'react';
 import '../../style.css';
 import {Link} from 'react-router-dom';
 import BoutonRetour from '../../../Components/RetourMap';
-import ImageTapeDos from '../../../assets/ChoixTapeDos.png';
+import ImageTapeDos from '../../../Image/ChoixTapeDos.png';
 import FormChiffre from '../../../Components/FormChiffre';
 import Radio1 from '../../../Components/Radio1';
 import Radio2 from '../../../Components/Radio2';

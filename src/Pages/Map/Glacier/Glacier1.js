@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../style.css';
 import {Link} from 'react-router-dom';
-import ImageGlacier from '../../../assets/Glacier.png';
-import ImageEtouffement from '../../../assets/Etouffement.png'
+import ImageGlacier from '../../../Image/Glacier.png';
+import ImageEtouffement from '../../../Image/Etouffement.png'
 import BoutonRetour from '../../../Components/RetourMap';
   
 const SituationGlacier=() =>{

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../style.css';
-import ImageChuteVelo from '../../../assets/ChuteVelo.jpeg';
+import ImageChuteVelo from '../../../Image/ChuteVelo.jpeg';
 import BoutonRetour from '../../../Components/RetourMap';
 import {Link} from 'react-router-dom';
 

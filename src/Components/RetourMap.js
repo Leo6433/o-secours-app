@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Pages/style.css';
 import {Link} from 'react-router-dom';
-import IconeRetour from '../assets/retour.png';
+import IconeRetour from '../Image/retour.png';
 
 //Fonction appelée à la fin de toutes les enigmes pour revenir à la page présentant la map
 
