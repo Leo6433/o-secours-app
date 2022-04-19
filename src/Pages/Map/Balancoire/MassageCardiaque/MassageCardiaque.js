@@ -1,16 +1,16 @@
 import React, {useEffect} from 'react';
-import '../../style.css';
+import '../../../style.css';
 import {
   useDialogState,
   Dialog,
   DialogDisclosure,
 } from "reakit/Dialog";
 import { Button } from "reakit/Button";
-import BoutonRetour from '../../../Components/RetourMap';
-import Timer from '../../../Components/Timer';
-import ImageSecours from '../../../Image/Reaction/premiers-secours.png';
-import {globalStateContext} from '../../../App';
-import {dispatchStateContext} from '../../../App';
+import BoutonRetour from '../../../../Components/RetourMap';
+import Timer from '../../../../Components/Timer';
+import ImageSecours from '../../../../Image/Reaction/premiers-secours.png';
+import {globalStateContext} from '../../../../App';
+import {dispatchStateContext} from '../../../../App';
 
     
 const useGlobalState = () => [

@@ -28,7 +28,11 @@ const MapParc =() => {
                 <br/><br/>
                 <text> Clique sur une des situations ★ pour les sauver!</text>           
             </div>
-            {state.vie>=3 && <div className="rectangle-beige"><p>Bien joué vous avez sauvez 3 vies! </p><button className="bouton-sauver" onClick={()=>{reset()}}>Recommencer</button></div>}
+            {state.vie>=4 && <div className="rectangle-beige"><p>Bien joué vous avez sauvé 3 vies! </p>
+            <button className="bouton-sauver" onClick={()=>{reset()}}>Recommencer le niveau</button>
+            <button className="bouton-sauver" onClick={()=>{reset()}}><Link style={{color:'black',textDecoration:'none'}} to="/ChoixSituation">Changer de lieu</Link> </button>
+            </div>}
+
             <div>
             <img className='img-MapParc'
                 src={ImageParc}

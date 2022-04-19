@@ -25,7 +25,6 @@ export default function Checkbox() {
             valeur += boutons[i].value + ","; 
         }
     }
-    alert("Vos réponses : "+ valeur);
 
     if(valeur==='echarpe,gant,sac,')
     {

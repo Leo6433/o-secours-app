@@ -19,7 +19,7 @@ const Regle =() => {
                     Le joueur devra ensuite sauver la personne en répondant correctement à une question ou en résolvant une énigme en rapport avec la situation. <br/>
                     <br/>
                     Des explications sur les gestes de secours seront ensuite fournies dans le but d'éduquer. <br/>
-                    En haut à gauche, le joueur pourra voir combien de vie il a réussit à sauver. Au bout de 3 vies sauver, il aura la possibilité de changer de niveau.<br/>
+                    En haut à gauche, le joueur pourra voir combien de vie il a réussit à sauver. Au bout de 4 vies sauver, il aura la possibilité de changer de niveau.<br/>
                 </text>
             </div>
             <div className='div-centrer'>

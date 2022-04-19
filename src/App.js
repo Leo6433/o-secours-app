@@ -15,7 +15,7 @@ import ExplicationCompression from './Pages/Map/Velo/ExplicationCompression';
 import GestesChute from './Pages/Map/Balancoire/GestesChute';
 import GestesEtouffement from './Pages/Map/Glacier/GestesEtouffement';
 import PLS from './Pages/Map/Balancoire/PLS/PLS';
-import MassageCardiaque from './Pages/Map/Balancoire/MassageCardiaque';
+import MassageCardiaque from './Pages/Map/Balancoire/MassageCardiaque/MassageCardiaque';
 import ChoixSituation from './Pages/Accueil/ChoixSituation';
 import Brulure from './Pages/Map/BatimentFeu/Brulure';
 import ExplicationBrulure from './Pages/Map/BatimentFeu/ExplicationBrulure';
