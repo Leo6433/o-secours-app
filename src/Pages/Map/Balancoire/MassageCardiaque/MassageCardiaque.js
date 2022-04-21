@@ -46,24 +46,24 @@ function MassageCardiaque(){
 
     return(
         <div className='div-centrer'>
-            <div >
-                <h2>Massage Cardiaque</h2>
-            </div>
+                
             <div>
-                <p>Il faut faire 100 compressions par minute, soit environ 2 compressions par seconde.</p>
-                <p>Appuie sur le coeur pour faire une compression et faire respirer la victime pendant 20 secondes! </p>
-                Score sur la page: {state.massage}
+              <h2>Massage Cardiaque</h2>
+                <p>Appuie sur le coeur pour faire une compression et faire respirer la victime pendant 20 secondes puis appelle les secours! </p>
+                Il faut faire 100 compressions par minute, soit environ 2 compressions par seconde. <br/><br/>
             </div>
-            <div>     
-                <Timer/>
-                <div > 
-                    <p>Appeler les secours</p>
-                    <img className='img-moyenne'
-                        src={ImageSecours}
-                        alt="Appel"/> 
-                </div>
+            <div className='container'>
+             
+              <div>   
+              <Timer/>
+              </div> 
+              <div > 
+                  <p>Appeler les secours</p>
+                  <img className='img-moyenne'
+                      src={ImageSecours}
+                      alt="Appel"/> 
+              
                 <DialogDisclosure {...dialog} className='bouton-sauver'>Appeler</DialogDisclosure> 
-                <div >
                 <Dialog {...dialog} role="alertdialog" >
                     <p style={{textAlign:"center"}}>Qui voulez vous appeler?</p>
                     <div className="boite-dialogue" style={{margin:15, textAlign: "center", backgroundColor: "rgb(70, 195,181)", padding:10}}>
@@ -75,8 +75,10 @@ function MassageCardiaque(){
                     <Button className='bouton-blanc'onClick={()=>{MauvaiseReponse()}}>114</Button>
                     </div>
                 </Dialog>
-                </div>
             </div>
+            
+            </div>
+            Score sur la page: {state.massage}
 
             <BoutonRetour/>
         </div>

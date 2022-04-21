@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom';
 const ChoixSituation =() => {
     return(
         <div className='div-centrer'>
-            <h2> Choix du lieux</h2>
+            <h2> Choix du lieu</h2>
             <div>
                 <img className='img-Situation2'
                     src={ImageEcole}

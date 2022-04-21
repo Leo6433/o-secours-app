@@ -11,7 +11,7 @@ const useGlobalState = () => [
     ];
 
 // Fonction qui simule un massage cardiaque sur une durée de 20s
-const Timer = () => {
+function Timer() {
   const [seconds, setSeconds] = useState(20);
   const [isActive, setIsActive] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -93,12 +93,11 @@ const Timer = () => {
         {counter}
       </div> 
     
-      <button style={{border:"none", margin:7}} onClick= {MontreChrono}>
+      <button style={{border:"none", margin:20}} onClick= {MontreChrono}>
           Aide<br/>
           Voir le chrono
       </button>
       <div>
-        Nombre d'erreur: {erreur}
         {seconds===0 && erreur<=3 && <div style={{color:'green'}}> Exercice validé!</div> }
         {seconds===0 && erreur>3 && <div style={{color:'green'}}> Exercice pas validé! Vous pouvez recommencer!</div>}
       </div>
