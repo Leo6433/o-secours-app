@@ -9,6 +9,7 @@ import { Button } from "reakit/Button";
 import BoutonRetour from '../../../../Components/RetourMap';
 import Timer from '../../../../Components/Timer';
 import ImageSecours from '../../../../Image/Reaction/premiers-secours.png';
+import ImageMassage from '../../../../Image/Massage.jpeg'
 import {globalStateContext} from '../../../../App';
 import {dispatchStateContext} from '../../../../App';
 
@@ -57,12 +58,17 @@ function MassageCardiaque(){
               <div>   
               <Timer/>
               </div> 
+              <div>
+                <img className='img-Situation'
+                      src={ImageMassage}
+                      alt="Massage"/> 
+              </div>
               <div > 
                   <p>Appeler les secours</p>
                   <img className='img-moyenne'
                       src={ImageSecours}
                       alt="Appel"/> 
-              
+
                 <DialogDisclosure {...dialog} className='bouton-sauver'>Appeler</DialogDisclosure> 
                 <Dialog {...dialog} role="alertdialog" >
                     <p style={{textAlign:"center"}}>Qui voulez vous appeler?</p>
@@ -75,7 +81,9 @@ function MassageCardiaque(){
                     <Button className='bouton-blanc'onClick={()=>{MauvaiseReponse()}}>114</Button>
                     </div>
                 </Dialog>
+                
             </div>
+            
             
             </div>
             Score sur la page: {state.massage}

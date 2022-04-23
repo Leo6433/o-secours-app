@@ -7,7 +7,7 @@ import eau from '../../../Image/Saignement/gouttes-deau.png';
 import pansement from '../../../Image/Saignement/pansement.png';
 import sac from '../../../Image/Saignement/sac-plastique.png';
 import scie from '../../../Image/Saignement/scie-a-main.png';
-import Checkbox1 from '../../../Components/Checkbox';
+import Checkbox from '../../../Components/Checkbox';
 
 const SaignementObjet=() =>{
 
@@ -15,9 +15,9 @@ const SaignementObjet=() =>{
         <div className='div-centrer'>
             <div className='text-margin'>
                 <h2> Saignement continue</h2>
-                <text>
+                <p>
                     La victime saigne de façon continue de la jambe. Il faut arreter le saignement.
-                </text>
+                </p>
             </div>
             <div className='fond-beige'>
                 <text> Quel(s) objet(s) allez vous utiliser?</text>
@@ -29,7 +29,7 @@ const SaignementObjet=() =>{
                     <img className='img-saignement' src={sac} alt="sac"/>
                     <img className='img-saignement' src={scie} alt="scie"/>
                 </div> 
-                <Checkbox1/>             
+                <Checkbox/>             
             </div>
             <BoutonRetour/>
         </div>      

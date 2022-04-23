@@ -9,7 +9,7 @@ const SituationFeu=() =>{
     return(
         <div className='div-centrer'>
             <div className='text-margin'>
-            Ce batiment prend feu et cet adolescent sort avec une brulure au bras.
+                <p>Ce batiment prend feu et cet adolescent sort avec une brûlure au bras.</p>
             </div>
             <div>
             <img className='img-Situation'

@@ -67,15 +67,15 @@ export default function App() {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
-	const [nbessai, setEssai]=useState(1);
+	const [essai, setEssai]=useState(1);
 
 	// Fonction qui reinitialise le quizz si le joueur decide de recommencer
 	function reset() {
 		setCurrentQuestion(0);
 		setScore(0);
 		setShowScore(false);
-		setEssai(nbessai - 1);
-		if(nbessai===0)
+		setEssai(essai - 1);
+		if(essai===0)
 		{
 			navigate("/ExplicationBrulure");
 		}
@@ -108,7 +108,7 @@ export default function App() {
 					<p>Ton score est de {score} sur {questions.length}</p>
                     {score>3 && <div style={{color:'green'}}> Niveau validé! <button className='validation' onClick={AugmenteVie}><Link style={{color:'black',textDecoration:'none'}} to="/ExplicationBrulure">Voir l'explication</Link></button></div>}
                     {score<=3 && <div> <p>Niveau pas validé! Vous pouvez recommencer!</p><button className='validation'onClick={() => reset()}>Recommencer</button></div>}
-                    <p>Nombre d'essai restant: {nbessai}</p>
+                    <p>Nombre d'essai restant: {essai}</p>
 				</div>
 			) : (
 				<>

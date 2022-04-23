@@ -1,5 +1,5 @@
 .nav-header{
-    height: 70px;
+    height: 80px;
     border: 1px solid white;
     background-color: rgb(246, 240, 229);
 }
@@ -21,6 +21,7 @@
     color: white;
     border-radius: 15px;
     border: 1px solid white;
+    width:70%;
     
 }
 .div-bouton-vert{
@@ -28,6 +29,8 @@
     color: white;
     border-radius: 15px;
     border: 1px solid white;
+    width:70%;
+    font-size: 15px;
 }
 .image-coeur{
     height:20px;

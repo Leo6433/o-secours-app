@@ -10,7 +10,7 @@ const SituationBalancoire=() =>{
     return(
         <div className='div-centrer'>
             <div className='text-margin'>
-            Cette jeune fille est tombé de la balancoire et vient de perdre connaissance!
+                <p>Cette jeune fille est tombée de la balancoire et vient de perdre connaissance!</p>
             </div>
             <div>
             <img className='img-Situation'
@@ -18,7 +18,7 @@ const SituationBalancoire=() =>{
                 alt="Chute balancoire"/> 
             </div>
             <div className='centrer'>
-                <button className='bouton-sauver'><Link style={{color:'white', textDecoration:'none', }} to="/GestesChute">Aider la jeune fille</Link> </button>
+                <button className='bouton-sauver'><Link style={{color:'white', textDecoration:'none' }} to="/GestesChute">Aider la jeune fille</Link> </button>
             </div>
             <BoutonRetour/>
         </div>        

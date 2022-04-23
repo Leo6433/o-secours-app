@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {globalStateContext} from '../App';
 import {dispatchStateContext} from '../App';
   
@@ -12,6 +12,8 @@ const useGlobalState = () => [
   // Fonction qui permet à l'utilisateur de choisir le nombre de tappe à effectuer sur une personne qui s'etouffe
 export default function Radio2() {
     const [state, dispatch] = useGlobalState();
+    const [essai, setEssai]=useState(0);
+    const [score, setScore]=useState(0);
 
     function getValue() {
     var boutons = document.getElementsByName('coup');
@@ -22,14 +24,15 @@ export default function Radio2() {
             valeur = boutons[i].value;
         }
     }
-     // Bonne réponse
-    if (valeur==='4/5'){
-        alert("Bonne réponse !")
+     // Bonne réponse en 1 essai
+    if (valeur==='4/5' && essai===0){
+        setScore(score => score + 1 );
         dispatch({ etouffement: state.etouffement + 1 })  
     }
      // Mauvaise réponse 
-    else{
+    else if (valeur!=='4/5'){
         alert("Mauvaise réponse ! La réponse était 4 à 5 coups")
+        setEssai(essai => essai + 1 ); 
     }
     }
 
@@ -38,19 +41,16 @@ export default function Radio2() {
         <div>
             <p> Nombre de coups à frapper par series : </p> 
             <div className='rectangle-beige'>
-            <input type="radio" name="coup" id="coup1" value="1/3"></input>
+            <input onClick={()=>{getValue()}} type="radio" name="coup" id="coup1" value="1/3"></input>
                 <label for="coup1">1 à 3</label>
-            <input type="radio" name="coup" id="coup2" value="4/5"></input>
+            <input onClick={()=>{getValue()}} type="radio" name="coup" id="coup2" value="4/5"></input>
                 <label for="coup2">4 à 5</label>
-            <input type="radio" name="coup" id="coup3" value="6/7"></input>
+            <input onClick={()=>{getValue()}} type="radio" name="coup" id="coup3" value="6/7"></input>
                 <label for="coup3">6 à 7</label>
-            <input type="radio" name="coup" id="coup4" value="7+"></input>
+            <input onClick={()=>{getValue()}} type="radio" name="coup" id="coup4" value="7+"></input>
                 <label for="coup4">7 ou +</label>
             </div>
-            <div className='centrer'>
-                <br/>
-                <button style={{backgroundColor:'#46c3b5', color:"white", border:"none"}} onClick={()=>{getValue()}}>✓</button>
-            </div> 
+            {score===1 && <div> <br/>Bien joué! </div>} 
         </div>
     );
 }

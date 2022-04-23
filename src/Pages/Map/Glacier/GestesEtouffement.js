@@ -33,11 +33,11 @@ const GestesEtouffement=()=>{
     <div className='div-centrer'>
         <div className='text-margin'>
             <h2> Etoufffement </h2>
-            <div>Vos réponses sur la page: <c>{state.etouffement}</c></div>
+            <div>Vos bonnes réponses sur la page: <c>{state.etouffement}</c></div>
             <br/>
-            <text>
+            <p>
                 La victime ne peut ni parler, ni respirer, ni tousser. Il va falloir débloquer ses voies aériennes.
-            </text>
+            </p>
         </div>
         <div className='text-margin'>           
             <Radio1/>

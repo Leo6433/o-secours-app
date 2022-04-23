@@ -4,7 +4,7 @@ import BoutonRetour from '../../../Components/RetourMap';
 const ExplicationBrulure=() =>{
     return(
         <div className='div-centrer'>
-            <h2>Explication sur les brûlures</h2>
+            <h2>Réponses et explications du quiz sur les brûlures</h2>
             <div className='container'>
                 <div className='explication-brulure'>
                     <div><b> Réponse 1: Aspect, douleur, étendue, localisation </b></div>

@@ -6,7 +6,7 @@ import BoutonRetour from '../../../Components/RetourMap';
 const QuizzBrulure=() =>{
     return(
         <div className='div-centrer'>
-            <h2>Quizz sur les brûlures</h2>
+            <h2>Quiz sur les brûlures</h2>
             Répondez aux questions avec un score supérieur à 3!
             <div className='quizz-centrer'>
             <Quizz style={{margin:20}}/>

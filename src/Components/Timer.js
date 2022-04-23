@@ -68,7 +68,7 @@ function Timer() {
   return (
     <div>
       <div>
-        <button className={"bouton-timer"} onClick={toggle}>
+        <button className="bouton-timer" onClick={toggle}>
           {isActive ? 'Pause' : 'Jouer'}
         </button>
         <button className="bouton-timer" onClick= {reset}>
