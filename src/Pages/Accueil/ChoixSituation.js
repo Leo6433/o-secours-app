@@ -14,7 +14,8 @@ const ChoixSituation =() => {
             <div>
                 <img className='img-Situation2'
                     src={ImageEcole}
-                    alt="Ecole"/> 
+                    alt="Ecole"
+                    title="En cours de développement"/> 
                 <p>A l'école</p>
                 <Link to="/MapParc">   
                 <img className='img-Situation2'

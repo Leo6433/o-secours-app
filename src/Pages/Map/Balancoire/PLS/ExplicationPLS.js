@@ -28,6 +28,9 @@ function ExplicationPLS(){
                 <p>et remontez le genou supérieur à angle droit pour terminer la stabilisation.</p>
                 <p><c>6</c> Restez à côté de la victime en attendant les secours.</p>
         </div>
+        
+        <a style={{color:'black'}} href="https://youtu.be/Eak9JO1zO2U"> → Voir une vidéo démonstrative </a>
+        
         <div style={{textAlign:'left'}}>               
             <button className='bouton-retour'>
                 <img style={{height:10}}src={IconeRetour} alt="<"/> 

@@ -34,7 +34,7 @@ export default function Radio2() {
         }
          // Bonne réponse
         if (valeur==='voies' && essai===0){
-            dispatch({ vie: state.vie + 1 }) 
+            dispatch({ vie: state.vie + 1 }) ;
             // Met le nombre d'essais à -1 si c'est le 1er coup et affiche par la suite 'bien joué'
             setEssai(essai => essai -1 ); 
         }
@@ -45,7 +45,7 @@ export default function Radio2() {
         }
         else
         {
-            alert("Mauvaise réponse ! La réponse était de libérer les voies aériennes")
+            alert("Mauvaise réponse ! La réponse était de libérer ses voies aériennes")
             setEssai(essai => essai + 1 ); 
         }
         }
@@ -55,15 +55,15 @@ export default function Radio2() {
         <div>
             <div>
             <input type="radio" name="chute" id="chute1" value="respiration" checked></input>
-                <label className='radioChute'for="chute1">Vérifier la respiration</label>
+                <label className='radioChute'for="chute1">Vérifier sa respiration</label>
             <input type="radio" name="chute" id="chute2" value="appeler"></input>
                 <label className='radioChute' for="chute2">Appeler les secours</label>
             <input type="radio" name="chute" id="chute3" value="voies"></input>
-                <label className='radioChute' for="chute3">Libérer les voies aériennes</label>
+                <label className='radioChute' for="chute3">Libérer ses voies aériennes</label>
             <input type="radio" name="chute" id="chute4" value="parler"></input>
                 <label className='radioChute' for="chute4">Lui parler</label>
             <input type="radio" name="chute" id="chute5" value="secouer"></input>
-                <label className='radioChute' for="chute5">Le secouer et le réveiller</label>
+                <label className='radioChute' for="chute5">La secouer et la réveiller</label>
             </div>
             <div className='centrer'>
             <Disclosure onClick={()=>{getValue()}} className='bouton-sauver'{...disclosure}>Valider la réponse</Disclosure>

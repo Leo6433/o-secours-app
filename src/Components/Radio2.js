@@ -39,7 +39,7 @@ export default function Radio2() {
     return (
         //Utilisation de input et label pour créer des boutons de type radio
         <div>
-            <p> Nombre de coups à frapper par series : </p> 
+            <p> Nombre de tapes à effectuer par serie : </p> 
             <div className='rectangle-beige'>
             <input onClick={()=>{getValue()}} type="radio" name="coup" id="coup1" value="1/3"></input>
                 <label for="coup1">1 à 3</label>

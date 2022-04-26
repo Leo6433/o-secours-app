@@ -86,7 +86,13 @@ function MassageCardiaque(){
             
             
             </div>
-            Score sur la page: {state.massage}
+            <div>
+              <a style={{color:'black'}} href="https://youtu.be/lKta6hI3lx8"> → Voir une vidéo démonstrative </a>
+              <br/>
+              <br/>
+              Score sur la page: {state.massage}/2
+            </div>
+           
 
             <BoutonRetour/>
         </div>

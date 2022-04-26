@@ -13,8 +13,8 @@ const ExplicationBalancoire=() =>{
             <div className='text-margin fond-beige'>
                 <p> <c> 1</c> Il faut vérifier sa respiration. </p>
                 <br/>
-                <p> <c> 2</c> S’il respire   → Mettre la victime en Position Latéral de sécurité.</p>
-                <p> S’il respire pas  → Commencer un massage cardique pulmonaire.</p>
+                <p> <c> 2</c> Si elle respire   → Mettre la victime en Position Latéral de Sécurité (PLS).</p>
+                <p> Si elle ne respire pas  → Commencer un massage cardiaque.</p>
                 <br/>
                 <p> <c> 3</c> Prévenir les secours! </p>
             </div>

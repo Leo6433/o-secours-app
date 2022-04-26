@@ -16,7 +16,7 @@ const SaignementObjet=() =>{
             <div className='text-margin'>
                 <h2> Saignement continue</h2>
                 <p>
-                    La victime saigne de façon continue de la jambe. Il faut arreter le saignement.
+                    La victime saigne de façon continue de la jambe. Il faut arrêter le saignement.
                 </p>
             </div>
             <div className='fond-beige'>

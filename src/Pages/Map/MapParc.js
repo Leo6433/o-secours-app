@@ -24,12 +24,12 @@ const MapParc =() => {
     return (
         <div className='div-centrer'>
             <div className='text-margin'>
-                <p style={{color:'red'}}> Des personnages sont en danger!</p>
+                <p style={{color:'red'}}> Des personnes sont en danger!</p>
                 <p> Clique sur une des situations ★ pour les sauver!</p>           
             </div>
             {state.vie>=4 && <div className="rectangle-beige"><p>Bien joué vous avez sauvé 4 vies! </p>
             <button className="bouton-sauver" onClick={()=>{reset()}}>Recommencer le niveau</button>
-            <button className="bouton-sauver" onClick={()=>{reset()}}><Link style={{color:'black',textDecoration:'none'}} to="/ChoixSituation">Changer de lieu</Link> </button>
+            <button className="bouton-sauver" onClick={()=>{reset()}}><Link style={{color:'black',textDecoration:'none'}} to="/ChoixSituation"> Changer de lieu</Link> </button>
             </div>}
             <div>
             <img className='img-MapParc'
@@ -41,22 +41,19 @@ const MapParc =() => {
             <map 
                 name="Map-Parc"> 
                 <Link to="/Balancoire">                  
-                <area shape="rect" coords="100, 300, 280, 540" alt="Balancoire" />
+                <area shape="rect" coords="100, 300, 280, 540" alt="Balancoire" title="Une chute"/>
                 </Link> 
                 <Link to="/Velo"> 
-                <area shape="rect" coords="320, 450, 450, 590" alt="velo" />
+                <area shape="rect" coords="320, 450, 450, 590" alt="velo" title="Un saignement"/>
                 </Link> 
                 <Link to="/BatimentFeu">
-                <area shape="rect" coords="500,300, 600,460" href="" alt="Batiment" />
+                <area shape="rect" coords="500,300, 600,460" href="" alt="Batiment" title="Une brûlure"/>
                 </Link>
                 <Link to="/Glacier">
-                <area shape="rect" coords=" 700,400, 900,550" href="" alt="Glacier" />
+                <area shape="rect" coords=" 700,400, 900,550" href="" alt="Glacier" title="Un étouffement"/>
                 </Link>
                 
             </map>
-
-
-
             </div>
 
         </div>

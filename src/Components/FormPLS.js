@@ -27,21 +27,24 @@ export default function Form() {
         var value = document.getElementById("in").value;
 
         // Réussite du niveau avec moins de 2 essais
-        if (value==='AEDFBC'&& essai<2){
+        if (value==='AEDFBC'&& essai===0){
             dispatch({ vie: state.vie + 1 })  
             setEssai(essai => essai - 1 ); 
-            navigate("/ExplicationPLS");
         }
 
         // Réussite mais avec trop essais
-        else if(value==='AEDFBC'&& essai>=2){
+        else if(value==='AEDFBC'&& essai===2){
             alert('Bonne réponse mais vous avez trop d essais!')
-            setEssai(essai => essai + 1 );
+            navigate("/ExplicationPLS");
+        }
+        else if (essai===2)
+        {
+            alert('Ce n est toujours pas la bonne combinaison!')
             navigate("/ExplicationPLS");
         }
         // Echec du niveau
         else{
-            alert('Ce n est pas la bonne combinanison!')
+            alert('Ce n est pas la bonne combinaison!')
             setEssai(essai => essai + 1 );
         }
     }

@@ -18,7 +18,7 @@ export default function App() {
 	// Definition des questions, des propositions de reponse ainsi que des réponses correctes 
 	const questions = [
 		{
-			questionTexte: 'Le secouriste doit transmettre aux secours une description précise des caractéristiques, c est à dire',
+			questionTexte: 'Le secouriste doit transmettre aux secours une description précise des caractéristiques d une brûlure. Lesquelles ?',
 			reponseOptions: [
 				{ reponseText: 'Mécanisme, aspect, localisation', isCorrect: false},
 				{ reponseText: 'Aspect, douleur, étendue, localisation', isCorrect: true},
@@ -36,7 +36,7 @@ export default function App() {
 			],
 		},
 		{
-			questionTexte: 'Pour une brulure de 2e degrès superciel, de quelle couleur est la peau?',
+			questionTexte: 'Pour une brûlure du deuxième degré superficielle, de quelle couleur est la peau?',
 			reponseOptions: [
 				{ reponseText: 'Rouge', isCorrect: false },
 				{ reponseText: 'Rouge-Rose', isCorrect: true},
@@ -54,12 +54,12 @@ export default function App() {
 			],
         },
 		{
-			questionTexte: 'Face à une brulure peu grave et de petite taille, il faut la mettre ',
+			questionTexte: 'Face à une brûlure peu grave et de petite taille, il faut la mettre :',
 			reponseOptions: [
                 { reponseText: 'Sous de l eau chaude à 20° pendant 20 min', isCorrect: false },
 				{ reponseText: 'Sous de l eau tiède à 15° pendant 15 min', isCorrect: true },
 				{ reponseText: 'Sous de l eau froide à 10° pendant 10 min', isCorrect: false },
-				{ reponseText: 'Sous de l eau glacé jusqu à ne plus avoir mal', isCorrect: false },
+				{ reponseText: 'Sous de l eau glacée jusqu à ne plus avoir mal', isCorrect: false },
 			],
 		},
 	];

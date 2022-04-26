@@ -3,6 +3,7 @@ import '../../style.css';
 import {Link} from 'react-router-dom';
 import BoutonRetour from '../../../Components/RetourMap';
 import ImageTapeDos from '../../../Image/ChoixTapeDos.png';
+import ImageQuestion from '../../../Image/point-dinterrogation.png'
 import FormChiffre from '../../../Components/FormChiffre';
 import Radio1 from '../../../Components/Radio1';
 import Radio2 from '../../../Components/Radio2';
@@ -33,8 +34,13 @@ const GestesEtouffement=()=>{
     <div className='div-centrer'>
         <div className='text-margin'>
             <h2> Etoufffement </h2>
-            <div>Vos bonnes réponses sur la page: <c>{state.etouffement}</c></div>
-            <br/>
+            <div>Vos bonnes réponses sur la page: <c title="Obtenir un score supérieur à 2"> {state.etouffement}/3 </c>
+            <img className='img-question'
+                src={ImageQuestion}
+                alt="Indication"
+                title="Obtenir un score de 2 ou plus pour réussir le niveau"/>   
+            </div>
+            
             <p>
                 La victime ne peut ni parler, ni respirer, ni tousser. Il va falloir débloquer ses voies aériennes.
             </p>
